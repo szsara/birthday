@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday!</title>
+    <style>
+      /* CSS Styling for the Birthday Card */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(
+          135deg,
+          #6dd5ed,
+          #2193b0
+        ); /* Cool blue gradient */
+        overflow: hidden;
+      }
+
+      .card {
+        width: 320px;
+        height: 450px;
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+        transform: scale(0.8);
+        animation: zoomIn 0.7s ease-in-out forwards;
+      }
+
+      .message {
+        font-size: 28px;
+        font-weight: bold;
+        color: #00587a;
+        margin-top: 60px;
+        opacity: 1; /* Ensuring the text is fully visible */
+        animation: slideDown 1s ease-out forwards;
+      }
+
+      .sub-message {
+        font-size: 16px;
+        color: #007ea7;
+        margin-top: 20px;
+        line-height: 1.5;
+        opacity: 1; /* Ensuring the text is fully visible */
+        animation: fadeIn 1.5s ease-out 1s forwards;
+      }
+
+      .balloon {
+        position: absolute;
+        width: 40px;
+        height: 60px;
+        background-color: #99e1e5;
+        border-radius: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: float 6s ease-in-out infinite, sway 2s ease-in-out infinite;
+      }
+
+      .balloon:after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 20px;
+        background-color: #888;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* Different balloon colors and positions */
+      .balloon1 {
+        top: -80px;
+        background-color: #007ea7;
+        animation-delay: 0s;
+      }
+
+      .balloon2 {
+        top: -130px;
+        background-color: #00587a;
+        animation-delay: 1s;
+      }
+
+      .balloon3 {
+        top: -180px;
+        background-color: #a8dadc;
+        animation-delay: 2s;
+      }
+
+      /* Keyframes for animations */
+      @keyframes float {
+        0% {
+          transform: translate(-50%, 0);
+        }
+        50% {
+          transform: translate(-50%, -20px);
+        }
+        100% {
+          transform: translate(-50%, 0);
+        }
+      }
+
+      @keyframes sway {
+        0%,
+        100% {
+          transform: translateX(-50%) rotate(-3deg);
+        }
+        50% {
+          transform: translateX(-50%) rotate(3deg);
+        }
+      }
+
+      @keyframes zoomIn {
+        from {
+          transform: scale(0.8);
+          opacity: 0.9;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          color: #007ea7;
+        }
+        50% {
+          color: #00587a;
+        }
+        100% {
+          color: #007ea7;
+        }
+      }
+
+      /* Shimmer effect on text */
+      .message,
+      .sub-message {
+        animation: shimmer 3s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Birthday Card HTML Structure -->
+    <div class="card">
+      <div class="balloon balloon1"></div>
+      <div class="balloon balloon2"></div>
+      <div class="balloon balloon3"></div>
+      <div class="message">🎉 Happy Birthday! 🎉</div>
+      <div class="sub-message">
+        Wishing you all the joy and excitement on your special day! Have an
+        awesome year ahead! 🎈
+      </div>
+    </div>
+  </body>
+</html>
