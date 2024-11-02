@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boldog Születésnapot!</title>
     <style>
-      /* Styling for the Birthday Card */
       body {
         margin: 0;
         padding: 0;
@@ -21,17 +20,13 @@
       .card {
         width: 320px;
         height: 250px;
-        background: linear-gradient(
-          135deg,
-          #007ea7,
-          #005f7a
-        ); /* Slight blue gradient */
+        background: linear-gradient(135deg, #007ea7, #005f7a);
         border-radius: 15px;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         text-align: center;
         padding: 20px;
         position: relative;
-        z-index: 2; /* Bring card above decorations */
+        z-index: 2;
         overflow: hidden;
         transform: scale(0.9);
         animation: zoomIn 1s ease-in-out forwards;
@@ -53,7 +48,6 @@
         animation: fadeIn 1.2s ease-out forwards;
       }
 
-      /* Balloons and stars behind text but in front of the card */
       .decoration {
         position: absolute;
         width: 80px;
@@ -106,7 +100,6 @@
         animation-delay: 4s;
       }
 
-      /* Keyframes for animations */
       @keyframes zoomIn {
         from {
           transform: scale(0.8);
@@ -153,7 +146,6 @@
     </style>
   </head>
   <body>
-    <!-- Background Decorations -->
     <div class="decoration decoration1"></div>
     <div class="decoration decoration2"></div>
     <div class="decoration decoration3"></div>
@@ -161,7 +153,6 @@
     <div class="decoration decoration5"></div>
     <div class="decoration decoration6"></div>
 
-    <!-- Birthday Card HTML Structure -->
     <div class="card">
       <div class="message">🎉 Boldog Születésnapot Dávid! 🎉</div>
       <div class="sub-message">
