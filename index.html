@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Happy Birthday!</title>
+    <title>Boldog Születésnapot!</title>
     <style>
-      /* CSS Styling for the Birthday Card */
+      /* Styling for the Birthday Card */
       body {
         margin: 0;
         padding: 0;
@@ -14,35 +14,31 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background: linear-gradient(
-          135deg,
-          #6dd5ed,
-          #2193b0
-        ); /* Cool blue gradient */
+        background: linear-gradient(135deg, #6dd5ed, #2193b0);
         overflow: hidden;
       }
 
       .card {
         width: 320px;
-        height: 450px;
-        background-color: #ffffff;
+        height: 200px;
+        background-color: #d0eaff;
         border-radius: 15px;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         text-align: center;
         padding: 20px;
         position: relative;
+        z-index: 2; /* Bring card above decorations */
         overflow: hidden;
-        transform: scale(0.8);
-        animation: zoomIn 0.7s ease-in-out forwards;
+        transform: scale(0.9);
+        animation: zoomIn 1s ease-in-out forwards;
       }
 
       .message {
-        font-size: 28px;
+        font-size: 26px;
         font-weight: bold;
         color: #00587a;
-        margin-top: 60px;
-        opacity: 1; /* Ensuring the text is fully visible */
-        animation: slideDown 1s ease-out forwards;
+        margin-top: 30px;
+        animation: fadeIn 1.2s ease-out forwards, shimmer 3s linear infinite;
       }
 
       .sub-message {
@@ -50,92 +46,70 @@
         color: #007ea7;
         margin-top: 20px;
         line-height: 1.5;
-        opacity: 1; /* Ensuring the text is fully visible */
-        animation: fadeIn 1.5s ease-out 1s forwards;
+        animation: fadeIn 1.5s ease-out 1s forwards, shimmer 3s linear infinite;
       }
 
-      .balloon {
+      /* Balloons and stars behind text but in front of the card */
+      .decoration {
         position: absolute;
-        width: 40px;
-        height: 60px;
-        background-color: #99e1e5;
+        width: 80px;
+        height: 100px;
         border-radius: 50%;
-        left: 50%;
-        transform: translateX(-50%);
-        animation: float 6s ease-in-out infinite, sway 2s ease-in-out infinite;
+        opacity: 0.8;
+        animation: float 5s ease-in-out infinite;
+        z-index: 1;
       }
 
-      .balloon:after {
-        content: "";
-        position: absolute;
-        width: 2px;
-        height: 20px;
-        background-color: #888;
-        bottom: -20px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      /* Different balloon colors and positions */
-      .balloon1 {
-        top: -80px;
-        background-color: #007ea7;
+      .decoration1 {
+        top: 40px;
+        left: 30px;
+        background-color: #99e1e5;
         animation-delay: 0s;
       }
 
-      .balloon2 {
-        top: -130px;
-        background-color: #00587a;
-        animation-delay: 1s;
-      }
-
-      .balloon3 {
-        top: -180px;
-        background-color: #a8dadc;
+      .decoration2 {
+        top: 100px;
+        left: 220px;
+        background-color: #007ea7;
         animation-delay: 2s;
       }
 
+      .decoration3 {
+        top: 250px;
+        left: 90px;
+        background-color: #a8dadc;
+        animation-delay: 4s;
+      }
+
+      .decoration4 {
+        top: 400px;
+        left: 30px;
+        background-color: #99e1e5;
+        animation-delay: 0s;
+      }
+
+      .decoration5 {
+        top: 450px;
+        left: 220px;
+        background-color: #007ea7;
+        animation-delay: 2s;
+      }
+
+      .decoration6 {
+        top: 550px;
+        left: 90px;
+        background-color: #a8dadc;
+        animation-delay: 4s;
+      }
+
       /* Keyframes for animations */
-      @keyframes float {
-        0% {
-          transform: translate(-50%, 0);
-        }
-        50% {
-          transform: translate(-50%, -20px);
-        }
-        100% {
-          transform: translate(-50%, 0);
-        }
-      }
-
-      @keyframes sway {
-        0%,
-        100% {
-          transform: translateX(-50%) rotate(-3deg);
-        }
-        50% {
-          transform: translateX(-50%) rotate(3deg);
-        }
-      }
-
       @keyframes zoomIn {
         from {
           transform: scale(0.8);
-          opacity: 0.9;
-        }
-        to {
-          transform: scale(1);
-          opacity: 1;
-        }
-      }
-
-      @keyframes slideDown {
-        from {
-          transform: translateY(-20px);
           opacity: 0;
         }
         to {
-          transform: translateY(0);
+          transform: scale(1);
           opacity: 1;
         }
       }
@@ -161,23 +135,45 @@
         }
       }
 
-      /* Shimmer effect on text */
-      .message,
-      .sub-message {
-        animation: shimmer 3s linear infinite;
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes floatStar {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 0.6;
+        }
+        50% {
+          transform: translateY(-15px);
+          opacity: 1;
+        }
       }
     </style>
   </head>
   <body>
+    <!-- Background Decorations -->
+    <div class="decoration decoration1"></div>
+    <div class="decoration decoration2"></div>
+    <div class="decoration decoration3"></div>
+    <div class="decoration decoration4"></div>
+    <div class="decoration decoration5"></div>
+    <div class="decoration decoration6"></div>
+
     <!-- Birthday Card HTML Structure -->
     <div class="card">
-      <div class="balloon balloon1"></div>
-      <div class="balloon balloon2"></div>
-      <div class="balloon balloon3"></div>
-      <div class="message">🎉 Happy Birthday! 🎉</div>
+      <div class="message">🎉 Boldog Születésnapot Dávid! 🎉</div>
       <div class="sub-message">
-        Wishing you all the joy and excitement on your special day! Have an
-        awesome year ahead! 🎈
+        Sok boldogságot és örömöt, legyen csodálatos éved! 🎈
       </div>
     </div>
   </body>
